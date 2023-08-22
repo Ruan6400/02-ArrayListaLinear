@@ -123,7 +123,7 @@ void buscarElemento()
 	        }
 	    }
 	    if(achou==false){
-	        cout <<"valor nao encontrado";
+	        cout <<"\nvalor nao encontrado\n";
 	    }
     }
     cout << "\nDigite qualquer letra para continuar\n";
