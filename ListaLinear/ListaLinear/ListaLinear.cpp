@@ -1,4 +1,4 @@
-
+// Ruan Santos
 #include <iostream>
 using namespace std;
 
@@ -12,10 +12,12 @@ void buscarElemento();
 //--------------------------
 
 
-const int MAX = 2;;
+const int MAX = 5;
 int lista[MAX]{};
 int nElementos = 0;
-
+int ValorBuscado = 0;
+bool achou = false;
+string Texto="";
 
 int main()
 {
@@ -26,7 +28,7 @@ void menu()
 {
 	int op = 0;
 	while (op != 6) {
-		system("cls"); // somente no windows
+	    system("clear");
 		cout << "Menu Lista Linear";
 		cout << endl << endl;
 		cout << "1 - Inicializar Lista \n";
@@ -56,8 +58,6 @@ void menu()
 		default:
 			break;
 		}
-
-		system("pause"); // somente no windows
 	}
 }
 
@@ -65,13 +65,15 @@ void inicializar()
 {
 	nElementos = 0;
 	cout << "Lista inicializada \n";
-
+    cout << "\nDigite qualquer letra para continuar\n";
+    cin >> Texto;
 }
 
 void exibirQuantidadeElementos() {
 
 	cout << "Quantidade de elementos: " << nElementos << endl;
-
+    cout << "\nDigite qualquer letra para continuar\n";
+    cin >> Texto;
 }
 
 void exibirElementos()
@@ -86,6 +88,8 @@ void exibirElementos()
 			cout << lista[n] << endl;
 		}
 	}
+	cout << "\nDigite qualquer letra para continuar\n";
+    cin >> Texto;
 }
 
 void inserirElemento()
@@ -98,11 +102,30 @@ void inserirElemento()
 	else {
 		cout << "Lista cheia";
 	}
-
+    cout << "\nDigite qualquer letra para continuar\n";
+    cin >> Texto;
 }
 
 // deve ser implementada como resposta ao exercicio
 void buscarElemento()
 {
-
+    if(nElementos==0){
+        cout << "\nLista vazia \n\n";
+    }
+    else{
+	    cout <<"Digite o valor do elemento \n";
+	    cin >>ValorBuscado;
+	    achou = false;
+	    for(int i=0;i<nElementos;i++){
+	        if(lista[i]==ValorBuscado){
+	            cout << "Encontrado na posicao "<<i<<endl;
+	            achou = true;
+	        }
+	    }
+	    if(achou==false){
+	        cout <<"valor nao encontrado";
+	    }
+    }
+    cout << "\nDigite qualquer letra para continuar\n";
+    cin >> Texto;
 }
